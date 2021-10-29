@@ -3,13 +3,15 @@
 
 <html>
   <body>
-    <div id="root"></div>
     <script type="module">
+      let root = document.createElement('div')
+      root.setAttribute('id', 'root')
+
       let divElement = document.createElement('div')
-      const root = document.getElementById('root')
 
       divElement.textContent = 'Hello World'
       root.append(divElement)
+      document.body.append(root)
     </script>
   </body>
 </html>
