@@ -14,12 +14,17 @@
 
   <script type="module">
     const rootElement = document.getElementById('root')
-    const firstSpan = React.createElement('span', {children: 'Hello'})
-    const secondSpan = React.createElement('span', {children: 'World'})
-    const reactElement = React.createElement('div', {
-      className: 'container',
-      children: [firstSpan, ' ', secondSpan],
-    })
+    const firstSpan = React.createElement('span', null, 'Hello')
+    const secondSpan = React.createElement('span', null, 'World')
+    const reactElement = React.createElement(
+      'div',
+      {
+        className: 'container',
+      },
+      firstSpan,
+      ' ',
+      secondSpan,
+    )
 
     ReactDOM.render(reactElement, rootElement)
   </script>
