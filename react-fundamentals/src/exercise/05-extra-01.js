@@ -1,10 +1,12 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-const Box = ({children, style, className}) => (
-  <div className={`box ${className}`} style={{fontStyle: 'initial', ...style}}>
-    {children}
-  </div>
+const Box = ({style, className = '', ...otherProps}) => (
+  <div
+    className={`box ${className}`}
+    style={{fontStyle: 'initial', ...style}}
+    {...otherProps}
+  />
 )
 
 function App() {

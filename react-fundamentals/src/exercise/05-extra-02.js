@@ -1,11 +1,17 @@
 import * as React from 'react'
 import '../box-styles.css'
 
-const Box = ({children, style, size}) => (
-  <div className={`box box--${size}`} style={{fontStyle: 'initial', ...style}}>
-    {children}
-  </div>
-)
+const Box = ({style, size = '', ...otherProps}) => {
+  const sizeClassName = size ? `box--${size}` : ''
+
+  return (
+    <div
+      className={`box ${sizeClassName}`}
+      style={{fontStyle: 'initial', ...style}}
+      {...otherProps}
+    />
+  )
+}
 
 function App() {
   return (
