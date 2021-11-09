@@ -4,11 +4,11 @@ import pkjson from '../../package.json'
 
 function useLocalStorage(storageName = pkjson.name, initialName) {
   const [storageValue, setStorageValue] = React.useState(
-    () => window.localStorage.getItem(storageName) || initialName,
+    () => JSON.parse(window.localStorage.getItem(storageName)) || initialName,
   )
 
   React.useEffect(() => {
-    window.localStorage.setItem(storageName, storageValue)
+    window.localStorage.setItem(storageName, JSON.stringify(storageValue))
   }, [storageValue, storageName])
 
   return [storageValue, setStorageValue]
