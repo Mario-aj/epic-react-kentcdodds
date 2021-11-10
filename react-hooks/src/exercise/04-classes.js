@@ -30,10 +30,6 @@ const Board = () => {
 
   React.useEffect(() => {
     updateLocalStorage()
-  })
-
-  React.useEffect(() => {
-    updateLocalStorage()
   }, [squares])
 
   const renderSquare = i => (
