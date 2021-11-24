@@ -8,7 +8,13 @@ const CountContext = React.createContext({
   setCount: () => {},
 })
 
-const useCount = () => React.useContext(CountContext)
+const useCount = () => {
+  const context = React.useContext(CountContext)
+
+  if (!context) throw new Error('useCount most be used within CountProvider')
+
+  return context
+}
 
 const CountProvider = ({children, initialCount = 0}) => {
   const [count, setCount] = React.useState(initialCount)
